@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Terminal OA SHLYAHTEN LOGIN</title>
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+	<link rel="stylesheet" href="css/terminal.css">
+    <script type="text/javascript" src="cordova.js"></script>
+</head>
+<body>
+	<h1>Terminal OA Shlyahten login</h1>
+<div class="tabs">
+	<a href="index.html">Новости</a>
+	<a href="login.html" class="active">Вход</a>
+	<a href="info.html">Инфо</a>
+	<hr>
+</div>
+
+
+          <h3 class="set-reverse">Информация об устройстве:</h3>
+          <p id="NetState">Идёт загрузка...</p>
+          <b style="color: red;">Приложение не работает без подключения к интернету!</b>
+          <p id="deviceProperties">Идёт загрузка...</p>
+          <br />
+
+<input id="first_name" name="first_name" type="text" disabled style="display:none;">
+<p>Мы попросим вас пройти несколько шагов до получения логина и пароля к общему аккаунту.</p>
+<p>Для получения пароля Вам потребуется авторизоваться через <span class="set-underlined">ВКонтакте</span> на втором шаге</p>
+
+<h3 class="set-reverse">Вход:</h3>
+<p><b>E-mail:</b></p><input class="app-input" id="e_mail" name="e_mail" required placeholder="Ваш e-mail" type="email" size="80%" value="nikita@shlyahten.ru">  <br>
+<p><b>Уникальный код:</b></p><input class="app-input"id="uniquecode" name="uniquecode" type="text" required placeholder="Ваш код" size="80%" value="140A5E7346304816"> <br>
+<input name="myBtn" type="submit" value="Вход" onclick="ajax_post();" style="font-size:120%;" class="app-button set-reverse"><br><br>
+<div id="status" class="set-blink"></div>
+<br>
+<i><u>Уникальный код</u> - код полученный в результате покупки. Найти его можно в личном кабинете в магазине и на почте. Вводить соблюдая РЕГИСТР.</i>
+<br>
+<p>По поводу ошибок и проблем пишите на: <a href="mailto:admin@shlyahten.ru">admin@shlyahten.ru</a></p>
+<br>
+
+
+<div style="display:none;">
+<script type="text/javascript">    
+    document.addEventListener("deviceready", onDeviceReady, false);
+    // device APIs are available
+    //
+    function onDeviceReady() {
+        var element = document.getElementById('deviceProperties');
+        element.innerHTML = 'Модель: '    + device.model    + '<br />' +
+                            'Версия Cordova: '  + device.cordova  + '<br />' +
+                            'Платформа: ' + device.platform + ' ' + device.version + '<br />' +
+                            'UUID: '     + device.uuid     + '<br />';
+}</script>
+<script type="text/javascript" charset="utf-8">
+
+    // Wait for device API libraries to load
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    // device APIs are available
+    //
+    function onDeviceReady() {
+        checkConnection();
+    }
+
+        function checkConnection() {
+            var networkState = navigator.connection.type;
+
+            var states = {};
+            states[Connection.UNKNOWN]  = 'Неизвестное подключение [FAIL]';
+            states[Connection.ETHERNET] = 'Ethernet подключение';
+            states[Connection.WIFI]     = 'WiFi [OK]';
+            states[Connection.CELL_2G]  = 'Cell 2G [OK]';
+            states[Connection.CELL_3G]  = 'Cell 3G [OK]';
+            states[Connection.CELL_4G]  = 'Cell 4G [OK]';
+            states[Connection.CELL]     = 'Cell generic [OK]';
+            states[Connection.NONE]     = 'Нет подключения [FAIL]';
+
+            var NetState = states[networkState];
+            document.getElementById('NetState').innerHTML="Подключен через: " + NetState;
+        }
+
+    </script>
+    <script>
+        document.addEventListener("deviceready", onDeviceReady, false);
+
+
+        function ajax_post() {
+            // Create our XMLHttpRequest object
+            var hr = new XMLHttpRequest();
+            // Create some variables we need to send to our PHP file
+            var url = "http://xn--j1ac0b1a.xn--e1alhsoq4c.xn--p1ai/oa_app/app_start.php";
+            var fn = document.getElementById("e_mail").value;
+            var ln = document.getElementById("uniquecode").value;
+            var vars = "email=" + fn + "&uniquecode=" + ln + "&model=" + device.model + "&version=" + device.version + "&uuid=" + device.uuid;
+            hr.open("POST", url, true);
+            // Set content type header information for sending url encoded variables in the request
+            hr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            // Access the onreadystatechange event for the XMLHttpRequest object
+            hr.onreadystatechange = function () {
+                if (hr.readyState == 4 && hr.status == 200) {
+                    var return_data = hr.responseText;
+                    if(return_data.search("ToVk") != -1){
+                        vklogin();
+                        // window.location.href = "http://xn--j1ac0b1a.xn--e1alhsoq4c.xn--p1ai/oa_app/VK/app_vk_auth_html.php";
+                        // App.load('login');
+
+                    }else {
+                        document.getElementById("status").innerHTML = return_data;
+                    }
+                }
+            }
+            // Send the data to PHP now... and wait for response to update the status div
+            hr.send(vars); // Actually execute the request
+            document.getElementById("status").innerHTML = "Пожалуйста подождите...";
+        }
+    </script>
+<script type="text/javascript">
+function vklogin() {
+/* document.addEventListener("deviceready", onDeviceReady, false);*/
+var ref = window.open('http://xn--j1ac0b1a.xn--e1alhsoq4c.xn--p1ai/oa_app/VK/app_vk_auth_html.php', '_blank', 'location=no, clearcache=yes, clearsessioncache=yes'); 
+}
+</script>
+
+	<script type="text/javascript">
+            app.initialize();
+    </script>
+
+</body>
+</html>
