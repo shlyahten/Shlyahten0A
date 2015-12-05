@@ -18,7 +18,7 @@
 
 <h3 class="set-reverse">Инфо:</h3>
 <ul>
-    <li>Версия: 2.х.х</li>
+    <li>Версия: <span id="version"></span></li>
     <li>Debug mode: off</li>
     <li>Pip-boy OS version: 1.7</li>
     <li>Release date: 01.12.2077</li>
@@ -30,6 +30,11 @@
 
 <a href="debug.html" style="bottom: 0px;position: absolute;opacity: 0;">Debug menu</a>
 <div style="display:none;">
+<script type="text/javascript">
+    getAppVersion(function(version) {
+    document.getElementById('version').innerHTML=version;
+});
+</script>
 <script type="text/javascript">
 document.addEventListener("deviceready", onDeviceReady, false);
 
