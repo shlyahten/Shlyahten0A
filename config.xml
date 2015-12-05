@@ -1,4 +1,4 @@
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="ru.shlyahten.oa" version="2.0.2a">
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="ru.shlyahten.oa" version="2.0.2b">
   <name>Shlyahten OA</name>
   <description>Приложение для получения пароля от общего аккаунта shlyahten.ru.</description>
   <author href="http://shlyahten.ru" email="support@shlyahten.ru">Rubilnik</author>
@@ -23,7 +23,6 @@
   <gap:plugin name="org.apache.cordova.globalization"/>
   <gap:plugin name="org.apache.cordova.inappbrowser"/>
   <gap:plugin name="org.apache.cordova.network-information"/>
-  <plugin name="net.bgta.phonegap.plugin.appversion" spec="1.1.1" source="pgb" />
   <icon src="icon.png"/>
   <icon src="www/res/icon/android/mdpi.png" gap:platform="android" gap:qualifier="mdpi"/>
   <icon src="www/res/icon/android/hdpi.png" gap:platform="android" gap:qualifier="hdpi"/>
