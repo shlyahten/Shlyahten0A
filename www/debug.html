@@ -69,6 +69,17 @@
     }
     </script>
 
+<script type="text/javascript">
+document.addEventListener("deviceready", onDeviceReady, false);
+
+function onDeviceReady(){
+    document.addEventListener("backbutton", function(e){  
+           e.preventDefault();
+           document.location.href="index.html";
+    }, false);
+}
+</script>
+
     <!-- PUSH
     <script type="text/javascript" src="PushNotification.js"></script> -->
     <!--   <gap:plugin name="com.adobe.plugins.pushplugin" /> -->

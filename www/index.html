@@ -30,6 +30,16 @@ text = xmlhttp.responseText;
 
 document.getElementById('news').innerHTML = text;
 </script>
+<script type="text/javascript">
+document.addEventListener("deviceready", onDeviceReady, false);
+
+function onDeviceReady(){
+    document.addEventListener("backbutton", function(e){  
+           e.preventDefault();
+           navigator.app.exitApp();
+    }, false);
+}
+</script>
 	<script type="text/javascript">
             app.initialize();
     </script>

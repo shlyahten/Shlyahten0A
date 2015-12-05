@@ -30,6 +30,16 @@
 
 <a href="debug.html" style="bottom: 0px;position: absolute;opacity: 0;">Debug menu</a>
 <div style="display:none;">
+<script type="text/javascript">
+document.addEventListener("deviceready", onDeviceReady, false);
+
+function onDeviceReady(){
+    document.addEventListener("backbutton", function(e){  
+           e.preventDefault();
+           document.location.href="index.html";
+    }, false);
+}
+</script>
 	<script type="text/javascript">
             app.initialize();
     </script>
