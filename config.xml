@@ -23,6 +23,7 @@
   <gap:plugin name="org.apache.cordova.globalization"/>
   <gap:plugin name="org.apache.cordova.inappbrowser"/>
   <gap:plugin name="org.apache.cordova.network-information"/>
+  <gap:plugin name="net.bgta.phonegap.plugins.appversion" version="1.0.0" />
   <icon src="icon.png"/>
   <icon src="www/res/icon/android/mdpi.png" gap:platform="android" gap:qualifier="mdpi"/>
   <icon src="www/res/icon/android/hdpi.png" gap:platform="android" gap:qualifier="hdpi"/>

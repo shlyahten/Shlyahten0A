@@ -66,14 +66,14 @@
             var networkState = navigator.connection.type;
 
             var states = {};
-            states[Connection.UNKNOWN]  = '<b style="color: red;">Приложение не работает без подключения к интернету!</b><br>Неизвестное подключение [FAIL]';
+            states[Connection.UNKNOWN]  = '<b style="color: red;">Отсутствует подключение!</b><br>Неизвестное подключение [FAIL]';
             states[Connection.ETHERNET] = 'Ethernet подключение';
             states[Connection.WIFI]     = 'WiFi [OK]';
             states[Connection.CELL_2G]  = 'Cell 2G [OK]';
             states[Connection.CELL_3G]  = 'Cell 3G [OK]';
             states[Connection.CELL_4G]  = 'Cell 4G [OK]';
             states[Connection.CELL]     = 'Cell generic [OK]';
-            states[Connection.NONE]     = '<b style="color: red;">Приложение не работает без подключения к интернету!</b><br>Нет подключения [FAIL]';
+            states[Connection.NONE]     = '<b style="color: red;">Отсутствует подключение!</b>';
 
             var NetState = states[networkState];
             document.getElementById('NetState').innerHTML="Подключен через: " + NetState;
