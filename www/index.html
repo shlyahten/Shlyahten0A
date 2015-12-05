@@ -16,10 +16,20 @@
 	<hr>
 </div>
 
-<b>In construction!</b>
+<b>Последние новости:</b>
+<div id="news">Ошибка получения!</div>
 
 
 <div style="display:none;">
+<script type="text/javascript">
+var xmlhttp, text;
+xmlhttp = new XMLHttpRequest();
+xmlhttp.open('GET', 'http://xn--j1ac0b1a.xn--e1alhsoq4c.xn--p1ai/oa_app/news.html', false);
+xmlhttp.send();
+text = xmlhttp.responseText;
+
+document.getElementById('news').innerHTML = text;
+</script>
 	<script type="text/javascript">
             app.initialize();
     </script>
