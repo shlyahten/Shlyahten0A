@@ -21,7 +21,9 @@
 	<li>DIALOGS</li>
 	<li><a href="#" onclick="showAlert(); return false;">Show Alert</a></li>
 	<li><a href="#" onclick="playBeep(); return false;">Play Beep</a></li>
-	<li>PUSH</li>
+	<li>INJECT CSS</li>
+	<li><a href="#" onclick="WebCSS(); return false;">Open browser</a></li>
+	<li><a href="#" onclick="SelfWeb(); return false;">Open browser (self window)</a></li>
 </ul>
 
 <div style="display:none;">
@@ -54,10 +56,21 @@
         navigator.notification.beep(3);
     }
 
+    // Injection CSS
+    //
+    function WebCSS() {
+    	var ref = window.open('http://ya.ru', '_blank', 'location=yes');
+		ref.addEventListener('loadstop', function() {
+		    ref.insertCSS({code: "html{background:#222222;}"});
+		});
+    }
+    function SelfWeb() {
+    	var ref2 = window.open('http://shlyahten.ru', '_self', 'location=yes');
+    }
     </script>
 
-    <!-- PUSH -->
-    <script type="text/javascript" src="PushNotification.js"></script>
+    <!-- PUSH
+    <script type="text/javascript" src="PushNotification.js"></script> -->
     <!--   <gap:plugin name="com.adobe.plugins.pushplugin" /> -->
 	<script type="text/javascript">
             app.initialize();
