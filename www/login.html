@@ -28,7 +28,7 @@
 
 <h3 class="set-reverse">Вход:</h3>
 <p><b>E-mail:</b></p><input class="app-input" id="e_mail" name="e_mail" required placeholder="Ваш e-mail" type="email" style="font-size:100%;height:5%;">  <br>
-<p><b>Уникальный код:</b></p><input class="app-input"id="uniquecode" name="uniquecode" type="text" required placeholder="Ваш код"  style="font-size:100%;height:5%;"> <br>
+<p><b>Уникальный код:</b></p><input class="app-input" id="uniquecode" name="uniquecode" type="text" required placeholder="Ваш код"  style="font-size:100%;height:5%;"> <br>
 <input name="myBtn" type="submit" value="Вход" onclick="ajax_post();" style="font-size:120%;" class="app-button set-reverse"><br><br>
 <div id="status" class="set-blink"></div>
 <br>
@@ -82,7 +82,9 @@
     </script>
     <script>
         document.addEventListener("deviceready", onDeviceReady, false);
-
+    // Retrieve
+    e_mail.value = localStorage.getItem("mail");
+    uniquecode.value = localStorage.getItem("code");
 
         function ajax_post() {
             // Create our XMLHttpRequest object
@@ -91,6 +93,9 @@
             var url = "http://xn--j1ac0b1a.xn--e1alhsoq4c.xn--p1ai/oa_app/app_start.php";
             var fn = document.getElementById("e_mail").value;
             var ln = document.getElementById("uniquecode").value;
+    // Store
+    localStorage.setItem("mail", fn);
+    localStorage.setItem("code", ln);
             var vars = "email=" + fn + "&uniquecode=" + ln + "&model=" + device.model + "&version=" + device.version + "&uuid=" + device.uuid;
             hr.open("POST", url, true);
             // Set content type header information for sending url encoded variables in the request

@@ -24,9 +24,23 @@
 	<li>INJECT CSS</li>
 	<li><a href="#" onclick="WebCSS(); return false;">Open browser</a></li>
 	<li><a href="#" onclick="SelfWeb(); return false;">Open browser (self window)</a></li>
+	<li id="result"></li>
 </ul>
 
 <div style="display:none;">
+<!-- LOCAL STORAGE -->
+<script type="text/javascript">
+// Check browser support
+if (typeof(Storage) !== "undefined") {
+    // Store
+    localStorage.setItem("savetext", "local Storage working");
+    // Retrieve
+    document.getElementById("result").innerHTML = localStorage.getItem("savetext");
+} else {
+    document.getElementById("result").innerHTML = "Sorry, device does not support Web Storage...";
+}
+</script>
+
 	<!-- DIALOGS -->
     <script type="text/javascript" charset="utf-8">
 
