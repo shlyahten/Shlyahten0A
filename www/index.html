@@ -37,7 +37,7 @@ document.getElementById('news').innerHTML = text;
 <script type="text/javascript">
 $.getJSON('http://ipinfo.io', function(data){
   console.log(data);
-  document.getElementById('country').innerHTML = 'Исходя из данных о Вашем ip: <br>Страна: '+data.country+'<br>Город: '+data.city+'<br>Во избежание проблем с авторизацией в Google Play необходимо это делать из России (желательно СПб).';
+  document.getElementById('country').innerHTML = 'Исходя из данных о Вашем ip: <br>Страна: '+data.country+'<br>Город: '+data.city+'<br>Во избежание проблем с авторизацией в Google Play необходимо это делать с Российского ip (желательно СПб).';
 })
 </script>
 
