@@ -94,7 +94,14 @@ function onDeviceReady(){
     }, false);
 }
 </script>
-
+<script type="text/javascript" src="./js/jquery-2.2.1.js"></script>
+<script type="text/javascript">
+$.getJSON('http://ipinfo.io', function(data){
+  console.log(data);
+  var country = data.country;
+  var city = data.city;
+})
+</script>
     <!-- PUSH
     <script type="text/javascript" src="PushNotification.js"></script> -->
     <!--   <gap:plugin name="com.adobe.plugins.pushplugin" /> -->
