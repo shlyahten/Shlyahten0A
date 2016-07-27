@@ -1,45 +1,88 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
 <head>
 	<meta charset="UTF-8">
 	<title>Terminal OA SHLYAHTEN LOGIN</title>
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-	<link rel="stylesheet" href="css/terminal.css">
+    <link rel="stylesheet" href="material-files/material.min.css">
+    <script src="material-files/material.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <script type="text/javascript" src="cordova.js"></script>
 </head>
 <body>
-	<h1>Terminal OA Shlyahten login</h1>
-<div class="tabs">
-	<a href="index.html">Новости</a>
-	<a href="login.html" class="active">Вход</a>
-    <a href="games.html">Игры</a>
-	<a href="info.html">Инфо</a>
-	<hr>
+<!-- Always shows a header, even in smaller screens. -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row" style="padding-left: 20px;">
+      <!-- Title -->
+      <span class="mdl-layout-title">Shlyahten OA</span>
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+    </div>
+            <!-- Tabs -->
+    <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+      <a href="index.html" class="mdl-layout__tab">Новости</a>
+      <a href="login.html" class="mdl-layout__tab is-active">Вход</a>
+      <a href="games.html" class="mdl-layout__tab">Игры</a>
+      <a href="info.html" class="mdl-layout__tab">Инфо</a>
+    </div>
+  </header>
+  <main class="mdl-layout__content">
+    <div class="page-content">
+        <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+            <div class="mdl-cell mdl-cell--8-col">
+                <div class="mdl-card mdl-shadow--2dp" style="width: 100%;">
+                  <div class="mdl-card__title">
+                    <h2 class="mdl-card__title-text">Информация об устройстве:</h2>
+                  </div>
+                  <div class="mdl-card__supporting-text">
+                          <p id="NetState">Идёт загрузка...</p>
+                          <p id="deviceProperties">Идёт загрузка...</p>
+                  </div>
+                </div>
+        <!-- CARD START -->
+                <div class="mdl-card mdl-shadow--2dp" style="width: 100%;margin-top: 2%;">
+                  <div class="mdl-card__title">
+                    <h2 class="mdl-card__title-text">Вход:</h2>
+                  </div>
+                  <div class="mdl-card__supporting-text">
+                    <input id="first_name" name="first_name" type="text" disabled style="display:none;">
+                    <p>Мы попросим вас пройти несколько шагов до получения логина и пароля к общему аккаунту.</p>
+                    <p>Для получения пароля Вам потребуется авторизоваться через <u>ВКонтакте</u> на втором шаге</p>
+
+<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input class="mdl-textfield__input" id="e_mail" name="e_mail" required type="email">
+    <label class="mdl-textfield__label" for="e_mail">Ваш e-mail</label>
+</div>
+<br>
+<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input class="mdl-textfield__input" id="uniquecode" name="uniquecode" required type="text">
+    <label class="mdl-textfield__label" for="uniquecode">Уникальный код</label>
+</div>
+<br>
+<input name="myBtn" type="submit" value="Вход" onclick="ajax_post();" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+                    <br>
+                    <div id="status"></div>
+                    <br>
+                    <i><u>Уникальный код</u> - код полученный в результате покупки. Найти его можно в личном кабинете в магазине и на почте. Вводить соблюдая РЕГИСТР.</i>
+                    <br>
+                    <p>По поводу ошибок и проблем пишите на: <a href="mailto:admin@shlyahten.ru">admin@shlyahten.ru</a></p>    
+                  </div>
+                </div>
+        <!-- CARD END -->
+            </div>
+        </div>
+    </div>
+    <footer class="mdl-mini-footer">
+      <div class="mdl-mini-footer__left-section">
+        <div class="mdl-logo">Shlyahten OA app © <script type="text/javascript">var mdate = new Date(); document.write(mdate.getFullYear());</script></div>
+        <div id="ytWidget"></div>
+      </div>
+    </footer>
+  </main>
 </div>
 
-
-          <h3 class="set-reverse">Информация об устройстве:</h3>
-          <p id="NetState">Идёт загрузка...</p>
-          <p id="deviceProperties">Идёт загрузка...</p>
-          <br />
-
-<input id="first_name" name="first_name" type="text" disabled style="display:none;">
-<p>Мы попросим вас пройти несколько шагов до получения логина и пароля к общему аккаунту.</p>
-<p>Для получения пароля Вам потребуется авторизоваться через <span class="set-underlined">ВКонтакте</span> на втором шаге</p>
-
-<h3 class="set-reverse">Вход:</h3>
-<p><b>E-mail:</b></p><input class="app-input" id="e_mail" name="e_mail" required placeholder="Ваш e-mail" type="email" style="font-size:100%;height:5%;">  <br>
-<p><b>Уникальный код:</b></p><input class="app-input" id="uniquecode" name="uniquecode" type="text" required placeholder="Ваш код"  style="font-size:100%;height:5%;"> <br>
-<input name="myBtn" type="submit" value="Вход" onclick="ajax_post();" style="font-size:120%;" class="app-button set-reverse"><br><br>
-<div id="status" class="set-blink"></div>
-<br>
-<i><u>Уникальный код</u> - код полученный в результате покупки. Найти его можно в личном кабинете в магазине и на почте. Вводить соблюдая РЕГИСТР.</i>
-<br>
-<p>По поводу ошибок и проблем пишите на: <a href="mailto:admin@shlyahten.ru">admin@shlyahten.ru</a></p>
-<br>
-
-<div id="ytWidget"></div>
-<div style="display:none;">
 <script type="text/javascript">    
     document.addEventListener("deviceready", onDeviceReady, false);
     // device APIs are available
