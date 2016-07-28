@@ -160,7 +160,7 @@
             }
             // Send the data to PHP now... and wait for response to update the status div
             hr.send(vars); // Actually execute the request
-            document.getElementById("status").innerHTML = "Пожалуйста подождите...";
+            document.getElementById("status").innerHTML = '<div class="mdl-spinner mdl-js-spinner is-active"></div>Пожалуйста подождите...';
         }
     </script>
 <script type="text/javascript">
