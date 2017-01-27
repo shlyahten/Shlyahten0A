@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Terminal OA SHLYAHTEN LOGIN</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="material-files/material.min.css">
+    <script src="material-files/material.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script type="text/javascript" src="cordova.js"></script>
+</head>
+<body>
+<!-- Always shows a header, even in smaller screens. -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row" style="padding-left: 20px;">
+      <!-- Title -->
+      <span class="mdl-layout-title">Shlyahten OA</span>
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+    </div>
+            <!-- Tabs -->
+    <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+      <a href="index.html" class="mdl-layout__tab">Новости</a>
+      <a href="login.html" class="mdl-layout__tab is-active">Вход</a>
+      <a href="games.html" class="mdl-layout__tab">Игры</a>
+      <a href="info.html" class="mdl-layout__tab">Инфо</a>
+    </div>
+  </header>
+  <main class="mdl-layout__content">
+    <div class="page-content">
+        <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+            <div class="mdl-cell mdl-cell--8-col">
+
+        <!-- CARD START -->
+                <div class="mdl-card mdl-shadow--2dp" style="width: 100%;margin-top: 2%;">
+                  <div class="mdl-card__title">
+                    <h2 class="mdl-card__title-text">Вход:</h2>
+                  </div>
+                  <div class="mdl-card__supporting-text">
+                    <input id="first_name" name="first_name" type="text" disabled style="display:none;">
+                    <p>Мы попросим вас пройти верификацию для получения логина и пароля к общему аккаунту.</p>
+                    <p>Ваше устройство будет привязано к этой подписке.</p>
+
+                    <iframe src="http://xn--j1ac0b1a.xn--e1alhsoq4c.xn--p1ai/oa_app/final.php" style="width: 100%;" frameborder="0" seamless></iframe>
+
+                    <br>
+                    <p>По поводу ошибок и проблем пишите на: <a href="mailto:admin@shlyahten.ru">admin@shlyahten.ru</a></p>    
+                  </div>
+                </div>
+        <!-- CARD END -->
+            </div>
+        </div>
+    </div>
+    <footer class="mdl-mini-footer">
+      <div class="mdl-mini-footer__left-section">
+        <div class="mdl-logo">Shlyahten OA app © <script type="text/javascript">var mdate = new Date(); document.write(mdate.getFullYear());</script></div>
+        <div id="ytWidget"></div>
+      </div>
+    </footer>
+  </main>
+</div>
+
+
+<script type="text/javascript">
+document.addEventListener("deviceready", onDeviceReady, false);
+
+function onDeviceReady(){
+    document.addEventListener("backbutton", function(e){  
+           e.preventDefault();
+           document.location.href="index.html";
+    }, false);
+}
+</script>
+	<script type="text/javascript">
+            app.initialize();
+    </script>
+<script defer src="https://translate.yandex.net/website-widget/v1/widget.js?widgetId=ytWidget&pageLang=ru&widgetTheme=dark&trnslKey=trnsl.1.1.20160311T172447Z.6f53db7d15961547.742e71c86a730a276ca8210c15b9d0af2a57291b&autoMode=true" type="text/javascript"></script>
+</body>
+</html>
