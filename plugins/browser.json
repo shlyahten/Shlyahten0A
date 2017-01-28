@@ -7,9 +7,70 @@
         "files": {}
     },
     "installed_plugins": {
+        "cordova-plugin-battery-status": {
+            "PACKAGE_NAME": "ru.shlyahten.oa"
+        },
+        "cordova-plugin-camera": {
+            "PACKAGE_NAME": "ru.shlyahten.oa"
+        },
+        "cordova-plugin-media-capture": {
+            "PACKAGE_NAME": "ru.shlyahten.oa"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "ru.shlyahten.oa"
+        },
+        "cordova-plugin-contacts": {
+            "PACKAGE_NAME": "ru.shlyahten.oa"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "ru.shlyahten.oa"
+        },
+        "cordova-plugin-device-motion": {
+            "PACKAGE_NAME": "ru.shlyahten.oa"
+        },
+        "cordova-plugin-device-orientation": {
+            "PACKAGE_NAME": "ru.shlyahten.oa"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "ru.shlyahten.oa"
+        },
+        "cordova-plugin-file-transfer": {
+            "PACKAGE_NAME": "ru.shlyahten.oa"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "ru.shlyahten.oa"
+        },
+        "cordova-plugin-globalization": {
+            "PACKAGE_NAME": "ru.shlyahten.oa"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "ru.shlyahten.oa"
+        },
+        "cordova-plugin-media": {
+            "PACKAGE_NAME": "ru.shlyahten.oa"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "ru.shlyahten.oa"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "ru.shlyahten.oa"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "ru.shlyahten.oa"
+        },
+        "cordova-plugin-vibration": {
+            "PACKAGE_NAME": "ru.shlyahten.oa"
+        },
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "ru.shlyahten.oa"
         }
     },
-    "dependent_plugins": {}
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "ru.shlyahten.oa"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "ru.shlyahten.oa"
+        }
+    }
 }
