@@ -1,4 +1,4 @@
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="ru.shlyahten.oa" version="2.1.0b">
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="ru.shlyahten.oa" version="2.2.0b">
   <name>Shlyahten OA</name>
   <description>Приложение для получения пароля от общего аккаунта shlyahten.ru.</description>
   <author href="http://shlyahten.ru" email="support@shlyahten.ru">Rubilnik</author>
