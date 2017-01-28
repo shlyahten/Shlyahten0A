@@ -18,7 +18,7 @@
     <plugin name="cordova-plugin-splashscreen" source="npm" spec="~3.2.1" />
     <plugin name="cordova-plugin-statusbar" source="npm" spec="~2.1.2" />
     <plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1" />
-    <plugin name="com.verso.cordova.clipboard" spec="0.1.0" source="pgb" />
+    <plugin name="cordova-plugin-clipboard-x" source="npm" spec="~1.0.1" />
     <platform name="android">
   <icon src="www/res/icon/android/mdpi.png" gap:platform="android" gap:qualifier="mdpi"/>
   <icon src="www/res/icon/android/hdpi.png" gap:platform="android" gap:qualifier="hdpi"/>
