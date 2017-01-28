@@ -63,6 +63,9 @@
         },
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "ru.shlyahten.oa"
+        },
+        "cordova-plugin-clipboard-x": {
+            "PACKAGE_NAME": "ru.shlyahten.oa"
         }
     },
     "dependent_plugins": {

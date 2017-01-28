@@ -602,6 +602,15 @@ module.exports = [
             "navigator.notification",
             "navigator"
         ]
+    },
+    {
+        "file": "plugins/cordova-plugin-clipboard-x/www/clipboard.js",
+        "id": "cordova-plugin-clipboard-x.Clipboard",
+        "pluginId": "cordova-plugin-clipboard-x",
+        "clobbers": [
+            "cordova.plugins.clipboard",
+            "cordova.plugins.clipboard-x"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -627,7 +636,8 @@ module.exports.metadata =
     "cordova-plugin-splashscreen": "3.2.2",
     "cordova-plugin-statusbar": "2.1.3",
     "cordova-plugin-vibration": "2.1.3",
-    "cordova-plugin-whitelist": "1.2.2"
+    "cordova-plugin-whitelist": "1.2.2",
+    "cordova-plugin-clipboard-x": "1.0.1"
 }
 // BOTTOM OF METADATA
 });
