@@ -1,7 +1,7 @@
- document.addEventListener("deviceready", onDeviceReady, false);
+ document.addEventListener("deviceready", onDeviceReadySys, false);
     // device APIs are available
     //
-    function onDeviceReady() {
+    function onDeviceReadySys() {
         var element = document.getElementById('deviceProperties');
         element.innerHTML = 'Модель: '    + device.model    + '<br />' +
                             'Версия Cordova: '  + device.cordova  + '<br />' +
