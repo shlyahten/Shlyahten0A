@@ -35,42 +35,23 @@
   </div>
   <main class="mdl-layout__content">
     <div class="page-content">
-    	<!-- update banner -->
-    	<div class="mdl-grid" id="update-banner">
-    		<div class="mdl-cell mdl-cell--12-col">
-		    	<div class="mdl-card mdl-shadow--2dp">
-				  <div class="mdl-card__title">
-				    <h2 class="mdl-card__title-text">Вышло обновление</h2>
-				  </div>
-				  <div class="mdl-card__supporting-text" id="update-info">
-				  	<!-- update information -->
-				  </div>
-				  <div class="mdl-card__actions mdl-card--border">
-				    <a href="https://build.phonegap.com/apps/1800997/download/android/" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-				      Скачать новую версию
-				    </a>
-				  </div>
-				</div>
-			</div>
-    	</div>
     	<!-- start content -->
     	<div class="mdl-grid" id="content">
     		<div class="mdl-cell mdl-cell--12-col">
 		    	<div class="mdl-card mdl-shadow--2dp">
 				  <div class="mdl-card__title">
-				    <h2 class="mdl-card__title-text">Анализ IP</h2>
+				    <h2 class="mdl-card__title-text">Sample title</h2>
 				  </div>
-				  <div class="mdl-card__supporting-text" id="country">
-				    Загрузка...
-				  </div>
-				</div>
-
-				<div class="mdl-card mdl-shadow--2dp" style="margin-top: 2%;">
-				  <div class="mdl-card__title">
-				    <h2 class="mdl-card__title-text">Последние новости:</h2>
-				  </div>
-				  <div class="mdl-card__supporting-text" id="news">
-				  	Загрузка...
+				  <div class="mdl-card__supporting-text">
+				    <ul>
+                        <li>Версия: <span id="version">3.0b</span></li>
+                        <li>Debug mode: off</li>
+                        <li>Material version</li>
+                        <li>Release date: 27.07.2016</li>
+                        <br>
+                        <br>
+                        <li><a href="https://build.phonegap.com/apps/1800997/download/android/">Скачать последнюю версию</a></li>
+                    </ul>
 				  </div>
 				</div>
 			</div>
@@ -92,9 +73,5 @@ $.getJSON('http://ipinfo.io', function(data){
 <!-- ip info end -->
 
 <script type="text/javascript" src="assets/js.js"></script>
-<script type="text/javascript">
-getNews();
-getUpdate();
-</script>
 </body>
 </html>

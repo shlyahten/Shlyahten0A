@@ -43,10 +43,13 @@
 				    <h2 class="mdl-card__title-text">Вышло обновление</h2>
 				  </div>
 				  <div class="mdl-card__supporting-text" id="update-info">
-				  	<!-- update information -->
+				    <ul>
+				    	<li>Устранены баги</li>
+				    	<li>Добавлены новые</li>
+				    </ul>
 				  </div>
 				  <div class="mdl-card__actions mdl-card--border">
-				    <a href="https://build.phonegap.com/apps/1800997/download/android/" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+				    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
 				      Скачать новую версию
 				    </a>
 				  </div>
@@ -92,9 +95,5 @@ $.getJSON('http://ipinfo.io', function(data){
 <!-- ip info end -->
 
 <script type="text/javascript" src="assets/js.js"></script>
-<script type="text/javascript">
-getNews();
-getUpdate();
-</script>
 </body>
 </html>

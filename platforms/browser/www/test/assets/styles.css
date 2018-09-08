@@ -1,0 +1,20 @@
+.mdl-card {
+	width: 100%;
+}
+.copyright {
+	position: absolute;
+	bottom: 0;
+}
+#update-banner {
+	display: none;
+}
+
+#update-banner .mdl-card__supporting-text {
+	padding: 2px 2px;
+}
+
+#update-banner .mdl-card__title {
+  color: #fff;
+  height: 176px;
+  background: url('https://getmdl.io/assets/demos/welcome_card.jpg') center / cover;
+}
