@@ -1,74 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="assets/material.css">
-	<script src="assets/material.js"></script>
-	<link rel="stylesheet" href="assets/material-icons/css/main.css">
-	<link rel="stylesheet" href="assets/font-awesome/css/all.css">
-	<link rel="stylesheet" href="assets/styles.css">
-	<script type="text/javascript" src="cordova.js"></script>
-</head>
-<body>
-<!-- Always shows a header, even in smaller screens. -->
-<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-  <header class="mdl-layout__header">
-    <div class="mdl-layout__header-row">
-      <!-- Title -->
-      <span class="mdl-layout-title">Shlyahten OA</span>
-      <!-- Add spacer, to align navigation to the right -->
-      <div class="mdl-layout-spacer"></div>
-    </div>
-  </header>
-  <div class="mdl-layout__drawer">
-    <span class="mdl-layout-title">Меню</span>
-    <nav class="mdl-navigation">
-      <a class="mdl-navigation__link" href="index.html"><i class="fas fa-newspaper"></i> Новости</a>
-      <a class="mdl-navigation__link" href="login.html"><i class="fas fa-sign-in-alt"></i> Вход</a>
-      <a class="mdl-navigation__link" href="games.html"><i class="fas fa-gamepad"></i> Игры</a>
-      <a class="mdl-navigation__link" href="chat.html"><i class="fas fa-comments"></i> Чат</a>
-      <a class="mdl-navigation__link" href="info.html"><i class="fas fa-info-circle"></i> О приложении</a>
+<h2>Информация:</h2>
+<div id="deviceInfo"></div>
+<a onclick="deviceInfo();">Обновить</a>
 
-      <div class="mdl-navigation__link copyright">Shlyahten © <script type="text/javascript">var mdate = new Date(); document.write(mdate.getFullYear());</script></div>
-    </nav>
-  </div>
-  <main class="mdl-layout__content">
-    <div class="page-content">
-    	<!-- start content -->
-    	<div class="mdl-grid" id="content">
-    		<div class="mdl-cell mdl-cell--12-col">
-		    	<div class="mdl-card mdl-shadow--2dp">
-				  <div class="mdl-card__supporting-text">
-				    <ul>
-                        <li>Версия: <span id="version">3.0b</span></li>
-                        <li>Debug mode: off</li>
-                        <li>Material version</li>
-                        <li>Release date: 09.09.2018</li>
-                        <br>
-                        <br>
-                        <li><a href="https://build.phonegap.com/apps/1800997/download/android/">Скачать последнюю версию</a></li>
-                    </ul>
-				  </div>
-				</div>
-			</div>
-		</div>
-		<!-- end content -->
-    </div>
-  </main>
-</div>
-
-
-<script type="text/javascript" src="assets/jquery-3.3.1.js"></script>
-<!-- ip info-->
-<script type="text/javascript">
-$.getJSON('http://ipinfo.io', function(data){
-  console.log(data);
-  document.getElementById('country').innerHTML = 'Исходя из данных о Вашем ip: <br>Страна: '+data.country+'<br>Город: '+data.city+'<br>Во избежание проблем с авторизацией в Google Play необходимо это делать с Российского ip (желательно СПб).';
-})
+<script>
+  window.addEventListener("load", function(event) {
+    alert("All resources finished loading!");
+  });
 </script>
-<!-- ip info end -->
-
-<script type="text/javascript" src="assets/js.js"></script>
-</body>
-</html>

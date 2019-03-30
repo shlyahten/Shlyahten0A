@@ -1,100 +1,80 @@
 <!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2016 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
 <html>
+
 <head>
-	<title></title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="assets/material.css">
-	<script src="assets/material.js"></script>
-	<link rel="stylesheet" href="assets/material-icons/css/main.css">
-	<link rel="stylesheet" href="assets/font-awesome/css/all.css">
-	<link rel="stylesheet" href="assets/styles.css">
-	<script type="text/javascript" src="cordova.js"></script>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <!-- Good default declaration:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+        * Enable eval(): add 'unsafe-eval' to default-src
+    * Create your own at http://cspisawesome.com
+    -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+
+    <link rel="stylesheet" type="text/css" href="css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <title>Shlyahten OA</title>
 </head>
+
 <body>
-<!-- Always shows a header, even in smaller screens. -->
-<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-  <header class="mdl-layout__header">
-    <div class="mdl-layout__header-row">
-      <!-- Title -->
-      <span class="mdl-layout-title">Shlyahten OA</span>
-      <!-- Add spacer, to align navigation to the right -->
-      <div class="mdl-layout-spacer"></div>
-    </div>
-  </header>
-  <div class="mdl-layout__drawer">
-    <span class="mdl-layout-title">Меню</span>
-    <nav class="mdl-navigation">
-      <a class="mdl-navigation__link" href="index.html"><i class="fas fa-newspaper"></i> Новости</a>
-      <a class="mdl-navigation__link" href="login.html"><i class="fas fa-sign-in-alt"></i> Вход</a>
-      <a class="mdl-navigation__link" href="games.html"><i class="fas fa-gamepad"></i> Игры</a>
-      <a class="mdl-navigation__link" href="chat.html"><i class="fas fa-comments"></i> Чат</a>
-      <a class="mdl-navigation__link" href="info.html"><i class="fas fa-info-circle"></i> О приложении</a>
-
-      <div class="mdl-navigation__link copyright">Shlyahten © <script type="text/javascript">var mdate = new Date(); document.write(mdate.getFullYear());</script></div>
+<header>
+<div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper">
+        <ul class="navigation">
+          <li class="tab-nav actv" onclick="loadTab('main');"><i class="material-icons">home</i></li>
+          <li class="tab-nav" onclick="loadTab('login');"><i class="material-icons">account_circle</i></li>
+          <li class="tab-nav" onclick="loadTab('games');"><i class="material-icons">videogame_asset</i></li>
+          <li class="tab-nav" onclick="loadTab('info');"><i class="material-icons">help</i></li>
+        </ul>
+      </div>
     </nav>
-  </div>
-  <main class="mdl-layout__content">
-    <div class="page-content">
-    	<!-- update banner -->
-    	<div class="mdl-grid" id="update-banner">
-    		<div class="mdl-cell mdl-cell--12-col">
-		    	<div class="mdl-card mdl-shadow--2dp">
-				  <div class="mdl-card__title">
-				    <h2 class="mdl-card__title-text">Вышло обновление</h2>
-				  </div>
-				  <div class="mdl-card__supporting-text" id="update-info">
-				  	<!-- update information -->
-				  </div>
-				  <div class="mdl-card__actions mdl-card--border">
-				    <a href="https://build.phonegap.com/apps/1800997/download/android/" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-				      Скачать новую версию
-				    </a>
-				  </div>
-				</div>
-			</div>
-    	</div>
-    	<!-- start content -->
-    	<div class="mdl-grid" id="content">
-    		<div class="mdl-cell mdl-cell--12-col">
-		    	<div class="mdl-card mdl-shadow--2dp">
-				  <div class="mdl-card__title">
-				    <h2 class="mdl-card__title-text">Анализ IP</h2>
-				  </div>
-				  <div class="mdl-card__supporting-text" id="country">
-				    Загрузка...
-				  </div>
-				</div>
-
-				<div class="mdl-card mdl-shadow--2dp" style="margin-top: 2%;">
-				  <div class="mdl-card__title">
-				    <h2 class="mdl-card__title-text">Последние новости:</h2>
-				  </div>
-				  <div class="mdl-card__supporting-text" id="news">
-				  	Загрузка...
-				  </div>
-				</div>
-			</div>
-		</div>
-		<!-- end content -->
-    </div>
-  </main>
 </div>
+</header>
+
+<main>
+    <div class="container">
+
+    </div>
+</main>
 
 
-<script type="text/javascript" src="assets/jquery-3.3.1.js"></script>
-<!-- ip info-->
-<script type="text/javascript">
-$.getJSON('http://ipinfo.io', function(data){
-  console.log(data);
-  document.getElementById('country').innerHTML = 'Исходя из данных о Вашем ip: <br>Страна: '+data.country+'<br>Город: '+data.city+'<br>Во избежание проблем с авторизацией в Google Play необходимо это делать с Российского ip (желательно СПб).';
-})
-</script>
-<!-- ip info end -->
 
-<script type="text/javascript" src="assets/js.js"></script>
-<script type="text/javascript">
-getNews();
-getUpdate();
-</script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript">
+        loadTab('main');
+        app.initialize();
+    </script>
 </body>
+
 </html>
