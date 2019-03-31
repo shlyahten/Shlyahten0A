@@ -57,6 +57,15 @@ function onDeviceReady(){
            e.preventDefault();
            document.location.href="index.html";
     }, false);
+
+
+    var success = function(status) {
+        //alert('Message: ' + status);
+    };
+    var error = function(status) {
+        alert('Error: ' + status);
+    };
+    window.CacheClear(success, error);
 }
 
 //---------------------------
