@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-
+var version = "3.1.2";
 //---------------------------
 // News loading
 //---------------------------
@@ -36,6 +36,8 @@ function loadTab(page){
             setTimeout(function () {deviceInfo();}, 50);  
         } else if (page == "login") {
             setTimeout(function () {loadValues();}, 50);
+        } else if (page == "games") {
+            setTimeout(function () {games();}, 50);
         }
     return false;
 }
@@ -78,6 +80,8 @@ function deviceInfo() {
                             'Платформа: ' + device.platform + ' ' + device.version + '<br />' +
                             'UUID: '     + device.uuid     + '<br />'+
                             'Serial: '     + device.serial     + '<br />';
+
+        document.getElementById('version').innerHTML = version;
 }
 
 //---------------------------
@@ -126,4 +130,11 @@ function loadValues() {
 function login() {
     $("#login-form").html('<iframe src="http://xn--j1ac0b1a.xn--e1alhsoq4c.xn--p1ai/oa_app/final.php" style="width: 100%;" frameborder="0"></iframe>');
     // $("#info-card").css( "display", "none" );
+}
+
+//---------------------------
+// Games
+//---------------------------
+function games(){
+  $('.games').load('http://xn--j1ac0b1a.xn--e1alhsoq4c.xn--p1ai/oa_app/games.html');
 }
