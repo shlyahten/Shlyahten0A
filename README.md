@@ -1,4 +1,4 @@
-# Shlyahten0A
+# Shlyahten OA app
 
 <img src=https://build.phonegap.com/apps/1800997/badge/2028010607/version.svg />
 <img src=https://build.phonegap.com/apps/1800997/badge/2028010607.svg />
