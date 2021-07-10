@@ -16,12 +16,12 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-var version = "3.1.2";
+var version = "3.1.4";
 //---------------------------
 // News loading
 //---------------------------
 function getNews(){
-  $('#news').load('http://xn--j1ac0b1a.xn--e1alhsoq4c.xn--p1ai/oa_app/news.html');
+  $('#news').load('https://xn--j1ac0b1a.xn--e1alhsoq4c.xn--p1ai/oa_app/news.html');
 }
 //---------------------------
 // Pages
@@ -99,7 +99,7 @@ function loadValues() {
             // Create our XMLHttpRequest object
             var hr = new XMLHttpRequest();
             // Create some variables we need to send to our PHP file
-            var url = "http://xn--j1ac0b1a.xn--e1alhsoq4c.xn--p1ai/oa_app/app_start.php";
+            var url = "https://xn--j1ac0b1a.xn--e1alhsoq4c.xn--p1ai/oa_app/app_start.php";
             var fn = document.getElementById("e_mail").value;
             var ln = document.getElementById("uniquecode").value;
                 // Store
@@ -128,7 +128,7 @@ function loadValues() {
 
 
 function login() {
-    $("#login-form").html('<iframe src="http://xn--j1ac0b1a.xn--e1alhsoq4c.xn--p1ai/oa_app/final.php" style="width: 100%;" frameborder="0"></iframe>');
+    $("#login-form").html('<iframe src="https://xn--j1ac0b1a.xn--e1alhsoq4c.xn--p1ai/oa_app/final.php" style="width: 100%;" frameborder="0"></iframe>');
     // $("#info-card").css( "display", "none" );
 }
 
@@ -136,5 +136,5 @@ function login() {
 // Games
 //---------------------------
 function games(){
-  $('.games').load('http://xn--j1ac0b1a.xn--e1alhsoq4c.xn--p1ai/oa_app/games.html');
+  $('.games').load('https://xn--j1ac0b1a.xn--e1alhsoq4c.xn--p1ai/oa_app/games.html');
 }
