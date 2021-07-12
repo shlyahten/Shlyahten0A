@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<widget xmlns="http://www.w3.org/ns/widgets" id="ru.shlyahten.oa" version="3.1.4">
+<widget xmlns="http://www.w3.org/ns/widgets" id="ru.shlyahten.oa" version="3.1.5">
   <name>Shlyahten OA</name>
   <description>
         Программа для получения пароля к общему аккаунту shlyahten.ru.
@@ -8,10 +8,7 @@
         Shlyahten Team
     </author>
   <content src="index.html"/>
-  <preference name="DisallowOverscroll" value="true"/>
   <preference name="android-minSdkVersion" value="22"/>
-  <preference name="Orientation" value="portrait"/>
-  <preference name="SplashScreenDelay" value="0"/>
   <preference name="LoadingDialog" value="Загрузка,Пожалуйста, подождите"/>
   <preference name="StatusBarStyle" value="lightcontent"/>
   <platform name="android">
@@ -20,8 +17,8 @@
     <icon density="xhdpi" src="www/res/mipmap-xhdpi/ic_launcher.png"/>
     <icon density="xxhdpi" src="www/res/mipmap-xxhdpi/ic_launcher.png"/>
     <icon density="xxxhdpi" src="www/res/mipmap-xxxhdpi/ic_launcher.png"/>
+    <preference name="AndroidXEnabled" value="false"/>
   </platform>
-  <access origin="*"/>
   <allow-intent href="http://*/*"/>
   <allow-intent href="https://*/*"/>
   <allow-intent href="tel:*"/>
@@ -31,4 +28,13 @@
   <platform name="android">
     <allow-intent href="market:*"/>
   </platform>
+  <preference name="WindowsStorePublisherName" value="My Name"/>
+  <preference name="WindowsStoreIdentityName" value="fb99cbbb-bf43-6999-0c14-9ccbd1167428"/>
+  <access origin="*"/>
+  <preference name="KeepRunning" value="false"/>
+  <preference name="monaca:AndroidIsPackageNameSeparate" value="true"/>
+  <preference name="DisallowOverscroll" value="true"/>
+  <preference name="Orientation" value="portrait"/>
+  <preference name="SplashScreenDelay" value="0"/>
+  <preference name="Fullscreen" value="false"/>
 </widget>
